@@ -16,14 +16,18 @@ void verificaEntrada(String num) {
 }
 
 void operacao(int valor) {
-  if (valor.runtimeType == int) {
-    var result = 0;
+  if (valor >= 0) {
+    if (valor.runtimeType == int) {
+      var result = 0;
 
-    for (int i = 0; i < valor; i++) {
-      if (i % 3 == 0 || i % 5 == 0) {
-        result += i;
+      for (int i = 0; i < valor; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+          result += i;
+        }
       }
+      print("Resultado: " + result.toString());
     }
-    print("Resultado: " + result.toString());
+  } else {
+    print("Numero negativo!");
   }
 }
